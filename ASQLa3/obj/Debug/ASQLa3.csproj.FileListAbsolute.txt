@@ -1,0 +1,12 @@
+c:\users\administrator\desktop\ASQLa3\ASQLa3\bin\Debug\ASQLa3.exe.config
+c:\users\administrator\desktop\ASQLa3\ASQLa3\bin\Debug\ASQLa3.exe
+c:\users\administrator\desktop\ASQLa3\ASQLa3\bin\Debug\ASQLa3.pdb
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.csprojResolveAssemblyReference.cache
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.Form1.resources
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.Properties.Resources.resources
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.csproj.GenerateResource.Cache
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.exe
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.pdb
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\Interop.ADODB.dll
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\Interop.MSDASC.dll
+c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.csproj.ResolveComReference.cache
