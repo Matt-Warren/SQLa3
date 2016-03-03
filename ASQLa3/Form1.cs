@@ -14,15 +14,10 @@ namespace ASQLa3
 {
     public partial class Form1 : Form
     {
-        public String fromUsername;
-        public String fromPassword;
-        public String fromDatabase;
+
         public String fromTable;
         public String fromConnectionString;
 
-        public String toUsername;
-        public String toPassword;
-        public String toDatabase;
         public String toTable;
         public String toConnectionString;
 
@@ -40,31 +35,46 @@ namespace ASQLa3
             toTable = txtToTable.Text;
 
             String errorStr = String.Empty;
+            String msg1 = String.Empty;
+            String msg2 = String.Empty;
+            fromConnectionString = "Provider=SQLOLEDB.1;Password=Conestoga1;Persist Security Info=True;User ID=sa;Initial Catalog=NORTHWND;Data Source=.\\SQLEXPRESS";
+            toConnectionString = "Provider=SQLOLEDB.1;Password=Conestoga1;Persist Security Info=True;User ID=sa;Initial Catalog=NORTHWND;Data Source=.\\SQLEXPRESS";
 
             if (fromConnectionString == null || toConnectionString == null)
             {
                 //NEED to set both dbs
-                errorStr += "Need to set both connection strings before starting the transfer.";
+                errorStr += "Need to set both connection strings before starting the transfer.\n";
             }
             if (fromTable == "")
             {
-                errorStr += "\nNeed to specify the starting table to copy from.";
+                errorStr += "Need to specify the starting table to copy from.\n";
             }
             if (errorStr != String.Empty)
             {
-                MessageBox.Show(errorStr);
+                lblErrorMessage.Text = errorStr;
             }
             else
             {
                 //connect here
+                lblErrorMessage.Text = "Connecting and grabbing source table.";
                 sourceConnection = new DBConnection(fromConnectionString, fromTable);
                 destConnection = new DBConnection(toConnectionString, ((toTable==String.Empty)?fromTable:toTable) );
-                sourceConnection.Connect();
-
-                sourceConnection.GetTable();
-
-                destConnection.InsertData();
-
+                try
+                {
+                    sourceConnection.Connect();
+                    destConnection.Connect();
+                    lblErrorMessage.Text = "Connected. Starting to copy data.";
+                }
+                catch (Exception exception)
+                {
+                    lblErrorMessage.Text = "Connecting failed. " + exception.Message;
+                }
+                msg1 = sourceConnection.GetTable();
+                if (msg1.Length == 0)
+                {
+                    msg2 = destConnection.InsertData(sourceConnection.dataTable);
+                }
+                lblErrorMessage.Text = msg1 + msg2;
             }
         }
 

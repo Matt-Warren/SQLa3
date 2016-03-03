@@ -10,3 +10,15 @@ c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.pdb
 c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\Interop.ADODB.dll
 c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\Interop.MSDASC.dll
 c:\users\administrator\desktop\ASQLa3\ASQLa3\obj\Debug\ASQLa3.csproj.ResolveComReference.cache
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\bin\Debug\ASQLa3.exe.config
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\Interop.ADODB.dll
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\Interop.MSDASC.dll
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.csproj.ResolveComReference.cache
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.exe
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.pdb
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.csprojResolveAssemblyReference.cache
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.Form1.resources
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.Properties.Resources.resources
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\obj\Debug\ASQLa3.csproj.GenerateResource.Cache
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\bin\Debug\ASQLa3.exe
+C:\Users\mwarren\Desktop\Git\SQLa3\ASQLa3\bin\Debug\ASQLa3.pdb

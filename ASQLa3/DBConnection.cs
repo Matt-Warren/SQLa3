@@ -41,32 +41,93 @@ namespace ASQLa3
                 cmd.Connection = conn;
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Error: Failed to create a database connection. \n{0}", ex.Message);
                 connected = false;
             }
         }
 
 
-        public void GetTable(){
-            cmd.CommandText = "SELECT * FROM " + table;
-            conn.Open();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            da.Fill(dataTable);
-            da.Dispose();
-            conn.Close();
+        public String GetTable(){
+            String returnMessage = "";
+            try
+            {
+                conn.Open();
+                cmd.CommandText = "SELECT * FROM [" + table + "]";
+                
+                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                da.Fill(dataTable);
+                da.Dispose();
+                conn.Close();
+            }
+            catch(Exception){
+                returnMessage = "Could not open table.\n";
+            }
+            return returnMessage;
         }
 
-        public void CreateTable(String tableName)
+
+        public String InsertData(DataTable fromTable)
         {
-            dataTable.
+            int count = 0;
+            String query = "";
+            String returnMessage = "";
+            bool status = true;
+            try
+            {
+                conn.Open();
+                this.transaction = this.conn.BeginTransaction();
+                this.cmd.Transaction = this.transaction;
 
-        }
 
-        public void InsertData()
-        {
+                try
+                {
+                    foreach (DataRow dr in fromTable.Rows)
+                    {
+                        count = dr.ItemArray.Count();
+                        query = "INSERT INTO [" + table + "] VALUES('";
+                        foreach (Object o in dr.ItemArray)
+                        {
+                            count--;
+                            query += o.ToString();
+                            if (count != 0)
+                            {
+                                query += "' , '";
+                            }
+                            else
+                            {
+                                query += "');";
+                            }
+                        }
 
+                        cmd.CommandText = query;
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+                catch (Exception except)
+                {
+                    status = false;
+                    returnMessage += "Error copying a row from the table. \n" + except.Message + "\n";
+                    transaction.Rollback();
+                }
+                
+            }
+            catch (Exception excepti)
+            {
+                status = false;
+                returnMessage += "Error opening the connection. \n" + excepti.Message + "\n";
+            }
+            finally
+            {
+                if (status)
+                {
+                    transaction.Commit();
+                    returnMessage += "Data copied successfully. \n";
+                }
+                conn.Close();
+            }
+            return returnMessage;
         }
 
         public bool IsConnected()

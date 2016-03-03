@@ -37,6 +37,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnFromDatabase = new System.Windows.Forms.Button();
             this.btnToDatabase = new System.Windows.Forms.Button();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -54,6 +55,7 @@
             this.txtFromTable.Name = "txtFromTable";
             this.txtFromTable.Size = new System.Drawing.Size(100, 20);
             this.txtFromTable.TabIndex = 11;
+            this.txtFromTable.Text = "Territories";
             // 
             // txtToTable
             // 
@@ -61,6 +63,7 @@
             this.txtToTable.Name = "txtToTable";
             this.txtToTable.Size = new System.Drawing.Size(100, 20);
             this.txtToTable.TabIndex = 19;
+            this.txtToTable.Text = "TerritoriesCopy";
             // 
             // btnTransfer
             // 
@@ -119,11 +122,21 @@
             this.btnToDatabase.UseVisualStyleBackColor = true;
             this.btnToDatabase.Click += new System.EventHandler(this.btnToDatabase_Click);
             // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Location = new System.Drawing.Point(15, 218);
+            this.lblErrorMessage.MaximumSize = new System.Drawing.Size(250, 0);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblErrorMessage.TabIndex = 34;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 209);
+            this.ClientSize = new System.Drawing.Size(253, 329);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btnToDatabase);
             this.Controls.Add(this.btnFromDatabase);
             this.Controls.Add(this.label10);
@@ -151,6 +164,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnFromDatabase;
         private System.Windows.Forms.Button btnToDatabase;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }
 
